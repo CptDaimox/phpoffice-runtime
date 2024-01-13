@@ -25,6 +25,7 @@ RUN cd LibreOffice_7.6.4.1_Linux_x86-64_rpm/RPMS && \
   cd /opt/libreoffice7.6/ && \
   strip ./**/* || true
 
+ENV HOME=/tmp
 # Trigger dummy run to generate bootstrap files to improve cold start performance
 RUN mkdir /var/task/tmp && touch /var/task/tmp/test.docx \
   && cd /var/task/tmp \
